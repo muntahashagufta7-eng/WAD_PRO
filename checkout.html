@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daraz - Checkout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="bg-orange-500 p-4 flex justify-between items-center">
+    <h1 class="text-white text-2xl font-bold">Daraz</h1>
+    <nav>
+      <ul class="flex gap-6 text-white">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html" class="font-bold underline">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Checkout Form -->
+  <section class="p-6 max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6">Checkout</h2>
+
+    <form id="checkoutForm" class="bg-white p-6 rounded-lg shadow space-y-4">
+      <!-- Name -->
+      <div>
+        <label class="block mb-1 font-semibold">Full Name</label>
+        <input type="text" id="name" class="w-full p-2 border rounded" required>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label class="block mb-1 font-semibold">Address</label>
+        <textarea id="address" class="w-full p-2 border rounded" rows="3" required></textarea>
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label class="block mb-1 font-semibold">Phone Number</label>
+        <input type="tel" id="phone" class="w-full p-2 border rounded" required>
+      </div>
+
+      <!-- Payment Method -->
+      <div>
+        <label class="block mb-1 font-semibold">Payment Method</label>
+        <select id="payment" class="w-full p-2 border rounded" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="easypaisa">Easypaisa</option>
+          <option value="jazzcash">JazzCash</option>
+        </select>
+      </div>
+
+      <!-- Place Order Button -->
+      <button type="submit" class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600">
+        Place Order
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    <p>© 2025 Daraz Clone Project</p>
+  </footer>
+
+</body>
+</html>

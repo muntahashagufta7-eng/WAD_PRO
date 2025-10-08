@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daraz - Login / Signup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <!-- Container -->
+  <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold text-center text-orange-500 mb-6">Daraz</h1>
+
+    <!-- Tabs -->
+    <div class="flex mb-6 border-b">
+      <button id="loginTab" class="w-1/2 p-2 text-center font-semibold border-b-2 border-orange-500">Login</button>
+      <button id="signupTab" class="w-1/2 p-2 text-center font-semibold text-gray-500">Signup</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block font-semibold">Email</label>
+        <input type="email" class="w-full p-2 border rounded" required>
+      </div>
+      <div>
+        <label class="block font-semibold">Password</label>
+        <input type="password" class="w-full p-2 border rounded" required>
+      </div>
+      <button class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600">Login</button>
+    </form>
+
+    <!-- Signup Form (hidden by default) -->
+    <form id="signupForm" class="space-y-4 hidden">
+      <div>
+        <label class="block font-semibold">Full Name</label>
+        <input type="text" class="w-full p-2 border rounded" required>
+      </div>
+      <div>
+        <label class="block font-semibold">Email</label>
+        <input type="email" class="w-full p-2 border rounded" required>
+      </div>
+      <div>
+        <label class="block font-semibold">Password</label>
+        <input type="password" class="w-full p-2 border rounded" required>
+      </div>
+      <button class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600">Signup</button>
+    </form>
+  </div>
+
+  <script>
+    // Toggle Login / Signup Tabs
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    loginTab.addEventListener("click", () => {
+      loginForm.classList.remove("hidden");
+      signupForm.classList.add("hidden");
+      loginTab.classList.add("border-orange-500", "text-black");
+      signupTab.classList.remove("border-orange-500", "text-black");
+      signupTab.classList.add("text-gray-500");
+    });
+
+    signupTab.addEventListener("click", () => {
+      signupForm.classList.remove("hidden");
+      loginForm.classList.add("hidden");
+      signupTab.classList.add("border-orange-500", "text-black");
+      loginTab.classList.remove("border-orange-500", "text-black");
+      loginTab.classList.add("text-gray-500");
+    });
+  </script>
+</body>
+</html>

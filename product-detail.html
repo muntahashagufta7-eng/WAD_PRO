@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daraz - Product Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="bg-orange-500 p-4 flex justify-between items-center">
+    <h1 class="text-white text-2xl font-bold">Daraz</h1>
+    <nav>
+      <ul class="flex gap-6 text-white">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Detail -->
+  <section class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Product Image -->
+    <div>
+      <img id="product-image" 
+           src="images/ear buds.jpg" 
+           alt="Product" 
+           class="rounded shadow w-full h-96 object-cover">
+    </div>
+
+    <!-- Product Info -->
+    <div>
+      <h2 id="product-title" class="text-3xl font-bold">Wireless Earbuds</h2>
+      <p id="product-price" class="text-orange-500 text-xl mt-2">Rs. 3,799</p>
+      
+      <p id="product-description" class="text-gray-600 mt-4">
+        High-quality wireless earbuds with noise cancellation and deep bass. 
+        Perfect for music, calls, and gaming.
+      </p>
+
+      <!-- Buttons -->
+      <div class="mt-6 flex gap-4">
+        <a href="cart.html" class="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600">Add to Cart</a>
+        <a href="checkout.html" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    <p>© 2025 Daraz Clone Project</p>
+  </footer>
+
+  <!-- JavaScript for Dynamic Product (Optional) -->
+  <script>
+    // Example product data (sync with your products.html)
+    const products = {
+      "earbuds": {
+        title: "Wireless Earbuds",
+        price: "Rs. 3,799",
+        image: "images/ear buds.jpg",
+        description: "High-quality wireless earbuds with noise cancellation and deep bass."
+      },
+      "steamiron": {
+        title: "Steam Iron",
+        price: "Rs. 12,497",
+        image: "images/Steam Iron.jpg",
+        description: "Durable steam iron with quick heat and multiple modes."
+      },
+      "smartphone": {
+        title: "Smartphone",
+        price: "Rs. 26,124",
+        image: "images/Smartphone.jpg",
+        description: "Latest smartphone with powerful processor and great camera."
+      }
+      // 👉 Add more products here up to 20
+    };
+
+    // Get product from URL (e.g., product-detail.html?id=earbuds)
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    if (id && products[id]) {
+      document.getElementById("product-title").textContent = products[id].title;
+      document.getElementById("product-price").textContent = products[id].price;
+      document.getElementById("product-image").src = products[id].image;
+      document.getElementById("product-description").textContent = products[id].description;
+    }
+  </script>
+</body>
+</html>
